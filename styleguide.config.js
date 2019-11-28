@@ -54,7 +54,7 @@ module.exports = {
   },
   usageMode: 'expand',
   exampleMode: 'expand', // 默认展开
-  styleguideDir: 'dist',
+  styleguideDir: 'docs',
   logger: {
     // 打印错误信息
     // One of: info, debug, warn
