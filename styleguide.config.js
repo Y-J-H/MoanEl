@@ -1,7 +1,4 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin
 const path = require('path')
-const vueLoader = require('vue-loader')
 
 const docSiteUrl =
   process.env.DEPLOY_PRIME_URL || 'https://vue-styleguidist.github.io'
@@ -19,39 +16,7 @@ module.exports = {
   },
   version: '1.1.1',
   require: [path.join(__dirname, 'config/global.requires.js')],
-  webpackConfig: {
-    module: {
-      rules: [
-        {
-          test: /\.vue$/,
-          loader: 'vue-loader'
-        },
-        {
-          test: /\.(jsx|js)$/,
-          exclude: /node_modules|packages/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-              plugins: ['transform-vue-jsx']
-            }
-          }
-        },
-        {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
-        },
-        {
-          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-          loader: 'url-loader'
-        }
-      ]
-    },
-
-    plugins: [new vueLoader.VueLoaderPlugin()].concat(
-      process.argv.includes('--analyze') ? [new BundleAnalyzerPlugin()] : []
-    )
-  },
+  webpackConfig: Object.assign({}, require('./build/webpack.js')),
   usageMode: 'expand',
   exampleMode: 'expand', // 默认展开
   styleguideDir: 'docs',
