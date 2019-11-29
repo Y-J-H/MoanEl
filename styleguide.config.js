@@ -8,7 +8,7 @@ module.exports = {
   simpleEditor: true,
   copyCodeButton: true,
   title: 'Vue Styleguidist jsx example',
-  components: 'src/components/**/[A-z]*.jsx',
+  components: 'src/components/**/[A-z]*.js',
   defaultExample: false,
   ribbon: {
     text: 'Back to examples',

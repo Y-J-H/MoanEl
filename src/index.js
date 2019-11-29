@@ -22,4 +22,7 @@ if (GlobalVue) {
   GlobalVue.use(plugin)
 }
 
-export default MoanElTable
+export default {
+  install,
+  MoanElTable
+}
