@@ -1,4 +1,4 @@
-import MoanElTable from './components/MoanElTable'
+import MoanElTable from './components/MoanElTable/index.jsx'
 
 const components = [MoanElTable]
 
@@ -8,12 +8,18 @@ const install = Vue => {
   })
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
-} else {
-  console.error('Vue对象不存在')
+const plugin = {
+  install
 }
 
-export default {
-  MoanElTable
+let GlobalVue = null
+if (typeof window !== 'undefined') {
+  GlobalVue = window.Vue
+} else if (typeof global !== 'undefined') {
+  GlobalVue = global.Vue
 }
+if (GlobalVue) {
+  GlobalVue.use(plugin)
+}
+
+export default MoanElTable
