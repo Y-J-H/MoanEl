@@ -16,7 +16,7 @@ module.exports = {
   },
   version: '1.1.1',
   require: [path.join(__dirname, 'config/global.requires.js')],
-  webpackConfig: Object.assign({}, require('./build/webpack.js')),
+  webpackConfig: Object.assign({}, require('./build/webpack.conf.js')),
   usageMode: 'expand',
   exampleMode: 'expand', // 默认展开
   styleguideDir: 'docs',

@@ -6,11 +6,12 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        exclude: /node_modules/
       },
       {
-        test: /\.(jsx|js)$/,
-        exclude: /node_modules|packages/,
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {

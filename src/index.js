@@ -1,4 +1,4 @@
-import MoanElTable from './components/MoanElTable/index.jsx'
+import MoanElTable from './components/MoanElTable/index.js'
 
 const components = [MoanElTable]
 
