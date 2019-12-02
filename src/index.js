@@ -8,6 +8,10 @@ const install = Vue => {
   })
 }
 
+components.forEach(component => {
+  component.install = install
+})
+
 const plugin = {
   install
 }
