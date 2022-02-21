@@ -30,3 +30,5 @@ export default {
   install,
   MoanElTable
 }
+
+console.log(11);
